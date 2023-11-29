@@ -38,7 +38,7 @@ window.addEventListener('scroll', shadowHeader)
 
 /*=============== EMAIL JS ===============*/
 const contactForm = document.getElementById('contact-form'),
-    contactMessage = document.getElementById('contact-message')
+contactMessage = document.getElementById('message')
 
 const sendEmail = (e) => {
     e.preventDefault()
@@ -47,6 +47,7 @@ const sendEmail = (e) => {
     .then(() =>{
         //show sent message
         contactMessage.textContent = 'Message sent succesfully'
+
 
         //remove message after five second
         setTimeout(() =>{
@@ -131,3 +132,11 @@ const sr = ScrollReveal({
 
 sr.reveal('.home__perfil, .about__image', {origin: 'right'})
 sr.reveal('.home__name, .home__info, .about__container .section_title-1, .about_info', {origin: 'left'})
+
+
+function toggleMenu() {
+    const menu = document.querySelector(".menu-links");
+    const icon = document.querySelector(".hamburger-icon");
+    menu.classList.toggle("open")
+    icon.classList.toggle("open")
+}
